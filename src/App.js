@@ -1,25 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useState, useReducer, createContext} from "react";   
+import "./App.css";
+import Pattern from './containers/Pattern';
+import { BrowserRouter } from 'react-router-dom';
+import {reducer, initialState} from "./reducer/loginReducer";
 
+const LoginContext = createContext();
 function App() {
+    const [isDarkMode, setIsDarkMode] = useState(false);
+    const [state, dispatch] = useReducer(reducer, initialState);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <LoginContext.Provider value={{state, dispatch, isDarkMode, setIsDarkMode}}>
+      <div className={isDarkMode?'dark-mode':'light-mode'}>
+        <BrowserRouter>
+        <Pattern/>
+        </BrowserRouter>
+      </div>
+    </LoginContext.Provider>
+    </>
   );
 }
 
 export default App;
+export {LoginContext};

@@ -1,0 +1,20 @@
+.basic-ul{
+    list-style-type: none;
+}
+
+.show-width{
+    width: 33rem;
+
+}
+.basic-ul li{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    color: gray;
+}
+input[type="text"]{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgb(165, 165, 165);
+    padding: 3px;
+}
