@@ -13,6 +13,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import { LoginContext } from "../App";
 import EditProfile from "../pages/Editprofile";
+import Logout from "../pages/Logout";
 
 const Nav=()=>{
     const {state, dispatch} = useContext(LoginContext);
@@ -44,7 +45,7 @@ const Nav=()=>{
                         <Route exact path="/bookmark" element={<Bookmark/>}/>
                         <Route exact path="/list" element={<List/>}/>
                         <Route exact path="/editprofile" element={<EditProfile/>}/>
-
+                        <Route exact path="/logout" element={<Logout/>}/>
                     </>
                 ):(
                     <>
@@ -53,8 +54,6 @@ const Nav=()=>{
                     </>
                 )}
                
-               
-                
                 <Route exact path="*" element={<Error/>}/>
             </Routes>
         </>

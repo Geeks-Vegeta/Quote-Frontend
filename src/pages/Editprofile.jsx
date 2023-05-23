@@ -3,8 +3,7 @@ import {
     MDBCard,
     MDBCardBody,
     MDBCardTitle,
-    MDBBtn,
-    MDBInput
+    MDBBtn
   } from 'mdb-react-ui-kit';
   import { BsLink45Deg } from "react-icons/bs";
   import { AiFillLinkedin, 
@@ -14,15 +13,24 @@ import {
     AiFillFacebook } from "react-icons/ai";
 import "./styles/editprofile.css";
 import { IoIosArrowRoundBack } from "react-icons/io";
+import { useNavigate } from 'react-router-dom';
 const EditProfile=()=>{
+    const navigate = useNavigate();
     return (
         <>
-        <p style={{cursor:"pointer"}}><IoIosArrowRoundBack size="40"/> Back</p>
+        <p style={{cursor:"pointer"}} className="text-sm m-3" onClick={()=>navigate(-1)}><IoIosArrowRoundBack size="20"/> back</p>
         <div className="profile_pic_information">
-            <MDBCard className="shadow-lg my-3 mx-auto w-75">
+            <MDBCard className="shadow-lg my-3 mx-auto show-width">
                 <MDBCardBody>
                     <MDBCardTitle className="text-muted">profile</MDBCardTitle>
-                    {/* background image, profile pic */}
+                   
+                    <div className="background-image">
+                    <img onClick={()=>alert("back")} className="my-3" src={process.env.PUBLIC_URL+"background.jpg"} width="300" height="200" alt="background-image" />
+                    </div>
+                    <div className="profile-picture">
+                        <img onClick={()=>alert("profile")} style={{borderRadius:"50%"}} className="my-3 shadow-lg" src={process.env.PUBLIC_URL+"profile.jpg"} width="100" height="100" alt="profile-pic" />
+                    </div>
+                    
                 </MDBCardBody>
             </MDBCard>
         </div>
@@ -33,7 +41,7 @@ const EditProfile=()=>{
                     {/* username, education, bio, gender, mobile number, location */}
                     <ul className="basic-ul">
                         <li>
-                            <span>username</span>
+                            <span>Name</span>
                             <input type="text" name="" id="" />
                         </li>
                         <li>
@@ -89,6 +97,9 @@ const EditProfile=()=>{
                     </ul>
                 </MDBCardBody>
             </MDBCard>
+        </div>
+        <div className="button-save my-4 text-center">
+            <MDBBtn className="w-50">Save</MDBBtn>
         </div>
         
         </>

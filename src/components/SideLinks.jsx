@@ -3,7 +3,7 @@ import { AiFillHome, AiOutlineOrderedList, AiOutlineLogin } from "react-icons/ai
 import { RiHashtag } from "react-icons/ri";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { CgProfile } from "react-icons/cg";
-import { FiMoreHorizontal } from "react-icons/fi";
+import { FiMoreHorizontal, FiLogOut } from "react-icons/fi";
 import { MdOutlineBookmark } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import DarkModeToggle from "react-dark-mode-toggle";
@@ -69,9 +69,18 @@ const SideLinks=()=>{
                 </span>
                 </NavLink>
                 </li>
+                
+                <li>
+                <NavLink className={({ isActive }) => (isActive ? 'text-dark navigation-list-li' : 'grey-color navigation-list-li')} to="/list">
+
+                    <AiOutlineOrderedList size={25}/>
+                <span className="list-name">
+                List
+                </span>
+                </NavLink>
+                </li>
                 <li>
                 <NavLink className={({ isActive }) => (isActive ? 'text-dark navigation-list-li' : 'grey-color navigation-list-li')} to="/more">
-
                     <FiMoreHorizontal size={25}/>
                 <span className="list-name">
                 More
@@ -79,11 +88,10 @@ const SideLinks=()=>{
                 </NavLink>
                 </li>
                 <li>
-                <NavLink className={({ isActive }) => (isActive ? 'text-dark navigation-list-li' : 'grey-color navigation-list-li')} to="/list">
-
-                    <AiOutlineOrderedList size={25}/>
+                <NavLink className={({ isActive }) => (isActive ? 'text-dark navigation-list-li' : 'grey-color navigation-list-li')} to="/logout">
+                    <FiLogOut size={25}/>
                 <span className="list-name">
-                List
+                Logout
                 </span>
                 </NavLink>
                 </li>

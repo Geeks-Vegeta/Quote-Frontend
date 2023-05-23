@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, {useState, useEffect} from "react";
 import "./styles/profile.css";
-import { FiEdit2 } from "react-icons/fi";
+import { FiEdit2 , FiMoreHorizontal} from "react-icons/fi";
 import { NavLink } from "react-router-dom";
 
 const Profile=()=>{
@@ -36,8 +36,11 @@ const Profile=()=>{
             <div className="profile-info">
                 <p>@{userData.username}</p>
                 <div className="icons">
-                <NavLink  to="/editprofile">
-                    <FiEdit2/>
+                <NavLink className="mx-2"  to="/editprofile">
+                    <FiEdit2 />
+                </NavLink>
+                <NavLink className="mx-2"  to="/more">
+                    <FiMoreHorizontal />
                 </NavLink>
                 </div>
             </div>
