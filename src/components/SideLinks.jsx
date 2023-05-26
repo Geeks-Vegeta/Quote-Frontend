@@ -118,9 +118,9 @@ const SideLinks=()=>{
                     />
                     <span className="list-name">Mode</span>
                 </li>
-
-                <button className="button-p1">Quote Of Day</button>
-               
+                <NavLink className={({ isActive }) => (isActive ? 'text-dark navigation-list-li' : 'grey-color navigation-list-li')} to="/quoteofday">
+                    <button className="button-p1">Quote Of Day</button>
+               </NavLink>
             </ul>
         </div>
 

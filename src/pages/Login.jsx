@@ -36,8 +36,8 @@ const Login=()=>{
             </center>
         </div>
         <h3 className="text-center">Login To your Account</h3>
-        <div className="cards-Login">
-            <MDBCard className="shadow-lg">
+        <div className="cards-Login text-center">
+            <MDBCard className="shadow-lg bg-secondary mx-auto w-75">
             <MDBCardBody>
                 <MDBCardTitle>Login</MDBCardTitle>
                 <form onSubmit={userLogin}>
@@ -63,7 +63,7 @@ const Login=()=>{
             </MDBCard>
         </div>
         <div className="card-signin shadow-lg my-4">
-            <MDBCard className="text-center">
+            <MDBCard className="text-center bg-secondary mx-auto w-75">
                     <p className="p-1">New to Quoteser ? 
                         <NavLink to="/register">
                             Sign up

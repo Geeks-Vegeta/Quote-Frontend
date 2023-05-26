@@ -14,6 +14,7 @@ import Register from "../pages/Register";
 import { LoginContext } from "../App";
 import EditProfile from "../pages/Editprofile";
 import Logout from "../pages/Logout";
+import QuoteoftheDay from "../pages/QuoteoftheDay";
 
 const Nav=()=>{
     const {state, dispatch} = useContext(LoginContext);
@@ -37,6 +38,8 @@ const Nav=()=>{
             <Routes>
                 <Route exact path="/" element={<Home/>}/>
                 <Route exact path="/explore" element={<Explore/>}/>
+                <Route exact path="/quoteofday" element={<QuoteoftheDay/>}/>
+
                 {state?(
                     <>
                         <Route exact path="/more" element={<More/>}/>

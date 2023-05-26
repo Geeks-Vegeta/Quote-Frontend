@@ -19,7 +19,7 @@ const Register=()=>{
         </div>
         <h3 className="text-center">Sign Up New Account</h3>
         <div className="cards-Login">
-            <MDBCard className="shadow-lg">
+            <MDBCard className="shadow-lg w-75 mx-auto">
             <MDBCardBody>
                 <MDBCardTitle>Sign Up</MDBCardTitle>
                 <MDBInput className="my-4"  label='UserName' id='typetext' type='text' />
@@ -35,7 +35,7 @@ const Register=()=>{
             </MDBCard>
         </div>
         <div className="card-signin shadow-lg my-4">
-            <MDBCard className="text-center">
+            <MDBCard className="text-center mx-auto w-75">
                     <span className="p-1">Already have an account ? <NavLink to="/login">
                             Login
                         </NavLink>
