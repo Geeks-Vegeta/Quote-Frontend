@@ -15,7 +15,7 @@ const Pattern=()=>{
                 <MDBCol lg='3'>
                     <SideLinks/>
                 </MDBCol>
-                <MDBCol lg='6' className="border-left-right p-0 m-0">
+                <MDBCol lg='6' className="border-left-right xx p-0 m-0">
 
                    <Nav/>
 

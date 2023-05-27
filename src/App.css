@@ -12,3 +12,13 @@
   width: 100px;
   height: 100px;
 }
+
+
+.top-heading{
+  position: sticky;  
+    top:1px;  
+    padding: 10px;  
+    font-size:20px;  
+    font-weight:bold;  
+    background-color: rgba(112, 143, 143, 0.295);  
+}

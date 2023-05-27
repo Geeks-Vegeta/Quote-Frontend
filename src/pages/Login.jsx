@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
     MDBCard,
     MDBCardBody,
@@ -6,12 +6,15 @@ import {
     MDBBtn,
     MDBInput
   } from 'mdb-react-ui-kit';
+import { LoginContext } from "../App";
 import axios from "axios";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Login=()=>{
     const [email, setEmail]=useState("");
     const [password, setPassword]=useState("");
+    const {dispatch}=useContext(LoginContext)
+    let navigate=useNavigate();
 
     const userLogin=async(e)=>{
         e.preventDefault();
@@ -21,6 +24,8 @@ const Login=()=>{
                 "password":password
             })
             localStorage.setItem('isauthtoken', data);
+            dispatch({type:"isLogin", payload:true});
+            navigate("/")
         } catch (error) {
             console.log(error)
         }

@@ -7,6 +7,8 @@ import {
 const More=()=>{
     return (
         <>
+        <h5 className="top-heading">More</h5>
+
         <div className="change-password">
             <MDBCard className="shadow-lg my-3 mx-auto show-width">
                     <MDBCardBody>

@@ -3,7 +3,7 @@ import React from "react";
 const QuoteoftheDay=()=>{
     return (
         <>
-        <h3>Quote of the day</h3>
+        <h5 className="top-heading">Quote of the day</h5>
         </>
     )
 }
