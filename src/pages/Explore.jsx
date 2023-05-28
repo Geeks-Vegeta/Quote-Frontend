@@ -3,17 +3,16 @@ import axios from "axios";
 
 const Explore=()=>{
 
-    // const [recent, setRecent]=useState([]);
-    // useEffect(()=>{
+    const [recent, setRecent]=useState([]);
+    useEffect(()=>{
 
-    //     const getAllRecentPosts=async()=>{
-    //         let {data}=await axios.get('https://quoteapi-q48j.onrender.com/quote/getAllRecentPosts');
-    //         console.log(data);
-    //         setRecent(data);
-    //     }
-    //     getAllRecentPosts();
+        const getAllRecentPosts=async()=>{
+            let {data}=await axios.get('https://quoteapi-q48j.onrender.com/quote/getAllRecentPosts');
+            setRecent(data);
+        }
+        getAllRecentPosts();
 
-    // },[])
+    },[])
 
 
 
@@ -22,13 +21,13 @@ const Explore=()=>{
         <div className="p-2 mb-2 top-heading shadow-lg">
             <h5>Explore</h5>
         </div>
-        {/* {recent.map((data, idx)=>{
+        {recent.map((data, idx)=>{
             return (
                 <>
                 <p>{data.quote}</p>
                 </>
             )
-        })} */}
+        })}
 
         </>
     )

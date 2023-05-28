@@ -10,7 +10,7 @@ const Logout=()=>{
         dispatch({type:"isLogin", payload:false})
         localStorage.removeItem('isauthtoken');
         navigate("/")
-    },[dispatch])
+    },[dispatch,navigate])
 
     return (
         <>

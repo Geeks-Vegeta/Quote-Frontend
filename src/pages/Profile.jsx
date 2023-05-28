@@ -16,8 +16,6 @@ const Profile=()=>{
                 Authorization: 'Bearer ' + token //the token is a variable which holds the token
               }})
             setUserData(data);
-            console.log(userData);
-
         }
         getUserProfile();
     },[])

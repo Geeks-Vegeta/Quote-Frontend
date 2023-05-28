@@ -14,11 +14,13 @@ import {
 import "./styles/editprofile.css";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
+
+
 const EditProfile=()=>{
     const navigate = useNavigate();
     return (
         <>
-        <p style={{cursor:"pointer"}} className="text-sm m-3" onClick={()=>navigate(-1)}><IoIosArrowRoundBack size="20"/> back</p>
+        <p style={{cursor:"pointer"}} className="text-sm m-3 top-heading" onClick={()=>navigate(-1)}><IoIosArrowRoundBack size="20"/> back</p>
         <div className="profile_pic_information">
             <MDBCard className="shadow-lg my-3 mx-auto show-width">
                 <MDBCardBody>
