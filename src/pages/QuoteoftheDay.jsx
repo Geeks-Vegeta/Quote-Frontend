@@ -7,6 +7,7 @@ const QuoteoftheDay=()=>{
         const getQuoteoftheDay=async()=>{
             let {data}=await axios.get("https://quoteapi-q48j.onrender.com/quoteofday");
             setQuote(data);
+            console.log(data)
         }
         getQuoteoftheDay();
 
@@ -20,8 +21,6 @@ const QuoteoftheDay=()=>{
             "likes": "115457",
             "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/authors/1198551937i/259666._UX200_CR0,16,200,200_.jpg"
           }
-    
-
 
     return (
         <>
@@ -29,17 +28,15 @@ const QuoteoftheDay=()=>{
 
         <div className="card-for-qod mx-auto p-3">
             <div className="img mb-3">
-                <img className="qod-image" src={x.image} alt={x.author} />
-                <span className="mx-2">{x.author}</span>
+                <img className="qod-image" src={quote?quote.image:x.image} alt={x.author} />
+                <span className="mx-2">{quote?quote.author:x.author}</span>
             </div>
             <div className="quote">
-                <p>&ldquo; Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam eaque vitae asperiores maiores repellat, reprehenderit placeat, quasi corporis quo corrupti ipsa sequi saepe! Nisi esse assumenda distinctio aperiam voluptatum officia saepe nihil nemo veritatis atque, voluptatibus, molestiae ad incidunt, similique vitae quia dolores? Est quo error fugiat repellendus, commodi molestiae?  &rdquo;</p>
+                <p>&ldquo; {quote?quote.quote:x.quote}  &rdquo;</p>
             </div>
             <div>
-                <p className="author">&ndash; {x.author}</p>
+                <p className="author">&ndash; {quote?quote.author:x.author}</p>
             </div>
-
-
         </div>
 
 
