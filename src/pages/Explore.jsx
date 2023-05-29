@@ -19,7 +19,7 @@ const Explore=()=>{
     return (
         <>
         <div className="p-2 mb-2 top-heading shadow-lg">
-            <h5>Explore</h5>
+            <h3>Explore</h3>
         </div>
         {recent.map((data, idx)=>{
             return (

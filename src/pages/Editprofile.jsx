@@ -20,7 +20,7 @@ const EditProfile=()=>{
     const navigate = useNavigate();
     return (
         <>
-        <p style={{cursor:"pointer"}} className="text-sm m-3 top-heading" onClick={()=>navigate(-1)}><IoIosArrowRoundBack size="20"/> back</p>
+        <p style={{cursor:"pointer"}} className="text-sm  top-heading" onClick={()=>navigate(-1)}><IoIosArrowRoundBack size="20"/> back</p>
         <div className="profile_pic_information">
             <MDBCard className="shadow-lg my-3 mx-auto show-width">
                 <MDBCardBody>

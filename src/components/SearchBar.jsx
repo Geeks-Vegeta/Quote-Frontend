@@ -8,7 +8,7 @@ const SearchBar=()=>{
     return (
         <>
          <div className="search-bar">
-            <AiOutlineSearch size={20} color="black" className="m-1"/>
+            <AiOutlineSearch size={20} className="m-1 magnifying"/>
             <input width="200" className="border-text" placeholder="search for people 👨" type="text" name="" id="" />
         </div>
         {state?(

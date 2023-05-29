@@ -7,8 +7,9 @@
 }
 
 .search-bar{
-    background-color: rgb(223, 217, 217);
+    background-color: transparent;
     border-radius: 50px;
+    border: 1px solid rgb(90, 90, 90);
     padding: 10px;
     width: 20rem;
 }

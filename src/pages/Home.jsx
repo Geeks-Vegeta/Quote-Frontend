@@ -4,7 +4,7 @@ const Home=()=>{
     return (
         <>
         <div className="top-heading">
-            <h6>Home</h6>
+            <h3>Home</h3>
         </div>
         </>
     )
