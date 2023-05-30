@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
     MDBCard,
     MDBCardBody,
@@ -7,9 +7,35 @@ import {
     MDBInput
   } from 'mdb-react-ui-kit';
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Register=()=>{
+
+    const [name, setName]=useState();
+    const [email, setEmail]=useState();
+    const [password, setPassword]=useState();
+    const navigate=useNavigate()
+
+
+    const createUser=async()=>{
+        try {
+
+            let {data}=await axios.post("https://quoteapi-q48j.onrender.com/register",{
+            "username":name,
+            "email":email,
+            "password":password
+        })
+        navigate("/login");
+            
+        } catch (error) {
+            console.log(error);
+            
+        }
+    }
+
+       
+
     return (
         <>
         <div>
@@ -21,14 +47,12 @@ const Register=()=>{
         <div className="cards-Login">
             <MDBCard className="shadow-lg w-75 mx-auto">
             <MDBCardBody>
-                <MDBCardTitle>Sign Up</MDBCardTitle>
-                <MDBInput className="my-4"  label='UserName' id='typetext' type='text' />
-                <MDBInput className="my-4"  label='Email' id='typeEmail' type='email' />
-                <MDBInput className="my-4" label='Password' id='typePassword' type='password' />
-                <MDBInput className="my-4" label='Confirm Password' id='typePassword' type='password' />
-
+                <MDBCardTitle className="text-secondary">Sign Up</MDBCardTitle>
+                <MDBInput value={name} onChange={(e)=>setName(e.target.value)} className="my-4"  label='UserName' id='typetext' type='text' />
+                <MDBInput value={email} onChange={(e)=>setEmail(e.target.value)} className="my-4"  label='Email' id='typeEmail' type='email' />
+                <MDBInput value={password} onChange={(e)=>setPassword(e.target.value)} className="my-4" label='Password' id='typePassword' type='password' />
                 <div className="text-center">
-                <MDBBtn className="w-75">Register</MDBBtn>
+                <MDBBtn className="w-75" onClick={createUser}>Register</MDBBtn>
 
                 </div>
             </MDBCardBody>
@@ -36,7 +60,7 @@ const Register=()=>{
         </div>
         <div className="card-signin shadow-lg my-4">
             <MDBCard className="text-center mx-auto w-75">
-                    <span className="p-1">Already have an account ? <NavLink to="/login">
+                    <span className="p-1 text-secondary">Already have an account ? <NavLink to="/login">
                             Login
                         </NavLink>
                         </span>

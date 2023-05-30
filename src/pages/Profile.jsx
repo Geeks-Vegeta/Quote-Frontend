@@ -3,6 +3,9 @@ import React, {useState, useEffect} from "react";
 import "./styles/profile.css";
 import { FiEdit2 , FiMoreHorizontal} from "react-icons/fi";
 import { NavLink } from "react-router-dom";
+import { HiLocationMarker } from "react-icons/hi";
+import { AiOutlineGithub,AiFillLinkedin,AiFillTwitterCircle,AiFillInstagram } from "react-icons/ai";
+import { BsFacebook,BsPeopleFill } from "react-icons/bs";
 
 const Profile=()=>{
 
@@ -42,7 +45,67 @@ const Profile=()=>{
                 </NavLink>
                 </div>
             </div>
-            <div className="follwing-follow">
+            <div className="profile__info m-0">
+                <span>{userData.bio}</span>
+                <br />
+                <span><HiLocationMarker/> {userData.location}</span>
+            </div>
+            <div className="social-links">
+                    {userData.github_link?(
+                        <>
+                        <a href={userData.github_link}  rel="noreferrer" target="_blank">
+                            <span><AiOutlineGithub size={20}/></span>
+                        </a>
+                        </>
+                    ):(
+                        <>
+                        </>
+                    )}
+                     {userData.linkedIn_link?(
+                        <>
+                        <a href={userData.linkedIn_link} rel="noreferrer" target="_blank">
+                            <span><AiFillLinkedin size={20}/></span>
+                        </a>
+                        </>
+                    ):(
+                        <>
+                        </>
+                    )}
+                     {userData.twitter_link?(
+                        <>
+                        <a href={userData.twitter_link} rel="noreferrer" target="_blank">
+                            <span><AiFillTwitterCircle size={20}/></span>
+                        </a>
+                        </>
+                    ):(
+                        <>
+                        </>
+                    )}
+                    {userData.instagram_link?(
+                        <>
+                        <a href={userData.instagram_link} rel="noreferrer" target="_blank">
+                            <span><AiFillInstagram size={20}/></span>
+                        </a>
+
+                        </>
+                    ):(
+                        <>
+                        </>
+                    )}
+                     {userData.facebook_link?(
+                        <>
+                        <a href={userData.facebook_link} rel="noreferrer" target="_blank">
+                            <span><BsFacebook size={20}/></span>
+                        </a>
+                        </>
+                    ):(
+                        <>
+                        </>
+                    )}
+                    
+            </div>
+            <div className="follwing-follow my-1">
+                <span><BsPeopleFill/></span>
                 <span className="mx-2">{userData.followers?userData.followers.length:0} Followers</span>
                 <span className="mx-2">{userData.following?userData.followers.length:0} Following</span>
             </div>

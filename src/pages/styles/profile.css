@@ -16,3 +16,13 @@
     justify-content: space-between;
     padding: 0rem 1rem;
 }
+
+.social-links{
+    display: flex;
+    list-style-type: none;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+.social-links span{
+    margin-right: 0.5rem;
+}

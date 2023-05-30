@@ -27,20 +27,16 @@ const Login=()=>{
                 "email":email,
                 "password":password
             });
-            setTimeout(() => {
-
-                toast('Login Successfully', {
-                    position: "top-center",
-                    autoClose: 2000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "dark",
-                    });
-                
-            }, 3000);
+            toast('Login Successfully', {
+                position: "top-center",
+                autoClose: 1000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
             
             localStorage.setItem('isauthtoken', userdata.data);
             dispatch({type:"isLogin", payload:true});
@@ -103,7 +99,7 @@ const Login=()=>{
         <div className=".bg-light shadow-lg my-4">
             <MDBCard className="text-center mx-auto w-75">
 
-                    <MDBCardText className="p-1 text-li">New to Quoteser ? <a href="/register">Sign up</a>
+                    <MDBCardText className="p-1 text-li">New to Quoteser ? <NavLink to="/register">Sign up</NavLink>
                         
                     </MDBCardText>
 
