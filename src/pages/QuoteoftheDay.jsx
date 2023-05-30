@@ -7,7 +7,6 @@ const QuoteoftheDay=()=>{
         const getQuoteoftheDay=async()=>{
             let {data}=await axios.get("https://quoteapi-q48j.onrender.com/quoteofday");
             setQuote(data);
-            console.log(data)
         }
         getQuoteoftheDay();
 

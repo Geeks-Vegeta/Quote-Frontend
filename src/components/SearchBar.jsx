@@ -14,7 +14,7 @@ const SearchBar=()=>{
         {state?(
             <>
                 <div className="who-to-follow m-3 p-3">
-                    <h5>Who to follow 🧑‍🦱</h5>
+                    <h5>Follow 🧑‍🦱</h5>
                 </div>
             </>
         ):(
