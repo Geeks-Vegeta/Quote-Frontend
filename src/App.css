@@ -46,3 +46,9 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.like-repost-share{
+  display: flex;
+  justify-content: space-evenly;
+  cursor: pointer;
+}

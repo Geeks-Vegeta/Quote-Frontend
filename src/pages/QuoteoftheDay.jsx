@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { AiFillHeart } from "react-icons/ai";
+import { IoIosShareAlt } from "react-icons/io";
+import { BsRepeat } from "react-icons/bs";
+import { CiExport } from "react-icons/ci";
+
 const QuoteoftheDay=()=>{
     const [quote, setQuote]=useState();
 
@@ -11,6 +16,10 @@ const QuoteoftheDay=()=>{
         getQuoteoftheDay();
 
     },[])
+
+    let formatter = Intl.NumberFormat('en', { notation: 'compact' });
+    // example 1
+    let million = formatter.format(1e6);
 
     let x=
         {
@@ -35,6 +44,14 @@ const QuoteoftheDay=()=>{
             </div>
             <div>
                 <p className="author">&ndash; {quote?quote.author:x.author}</p>
+            </div>
+            <div className="like-repost-share">
+                <span> <AiFillHeart color="red" size="20"/>{quote?formatter.format(quote.likes):formatter.format(x.likes)}  </span>
+                <span> <IoIosShareAlt size="20"/> </span>
+                <span> <BsRepeat size="20"/> </span>
+                <span> <CiExport size="20"/> </span>
+
+
             </div>
         </div>
 
