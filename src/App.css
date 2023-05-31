@@ -19,7 +19,7 @@
     top:1px;  
     padding: 10px;  
     font-size:20px;  
-    background-color: rgba(112, 143, 143, 0.295);  
+    background-color: rgba(202, 204, 204, 0.87);  
 }
 
 .card-for-qod{
@@ -29,6 +29,11 @@
   border: 1px solid rgb(136, 134, 134);
   border-radius: 15px;
   background-color: transparent;
+}
+
+.card-for-qod:hover{
+  background-color: #c9c2c254;
+  cursor: pointer;
 }
 
 .qod-image{
@@ -51,4 +56,26 @@
   display: flex;
   justify-content: space-evenly;
   cursor: pointer;
+}
+
+.quote-tags{
+  display: flex;
+}
+
+.quote-tags span{
+  margin-right: 5px;
+  font-size: 0.9rem;
+}
+
+.img-name{
+  display: flex;
+  justify-content: space-between;
+}
+
+.moreicon:hover{
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: #666365;
+  transition: 1s ease;
 }

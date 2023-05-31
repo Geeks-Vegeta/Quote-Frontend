@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
 import { AiFillHeart } from "react-icons/ai";
 import { IoIosShareAlt } from "react-icons/io";
 import { BsRepeat } from "react-icons/bs";
@@ -18,8 +19,7 @@ const QuoteoftheDay=()=>{
     },[])
 
     let formatter = Intl.NumberFormat('en', { notation: 'compact' });
-    // example 1
-    let million = formatter.format(1e6);
+
 
     let x=
         {
@@ -50,13 +50,8 @@ const QuoteoftheDay=()=>{
                 <span> <IoIosShareAlt size="20"/> </span>
                 <span> <BsRepeat size="20"/> </span>
                 <span> <CiExport size="20"/> </span>
-
-
             </div>
         </div>
-
-
-
         </>
     )
 }
