@@ -1,10 +1,10 @@
 
 .who-to-follow{
     width: 300px;
-    height: 500px;
+    height: 300px;
     overflow: auto;
     background-color:transparent;
-    border: 1px solid rgb(0, 255, 76);
+    border: 1px solid rgba(0, 255, 76, 0.37);
     border-radius: 30px;
 }
 

@@ -3,7 +3,7 @@ import React from "react";
 const Notification=()=>{
     return(
         <>
-        <h3 className="top-heading">Notification</h3>
+        <h4 className="top-heading shadow-lg">Notification</h4>
         </>
     )
 }

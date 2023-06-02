@@ -9,12 +9,12 @@ const SearchBar=()=>{
         <>
          <div className="search-bar">
             <AiOutlineSearch size={20} className="m-1 magnifying"/>
-            <input width="200" className="border-text" placeholder="search for people 👨" type="text" name="" id="" />
+            <input width="150" className="border-text" placeholder="search for users" type="text" name="" id="" />
         </div>
         {state?(
             <>
                 <div className="who-to-follow m-3 p-3">
-                    <h5>Follow 🧑‍🦱</h5>
+                    <h5>Follow</h5>
                 </div>
             </>
         ):(

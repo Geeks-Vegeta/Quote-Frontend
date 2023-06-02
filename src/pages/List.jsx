@@ -3,7 +3,7 @@ import React from "react";
 const List=()=>{
     return (
         <>
-        <h3 className="top-heading">List</h3>
+        <h4 className="top-heading shadow-lg">List</h4>
         </>
     )
 }

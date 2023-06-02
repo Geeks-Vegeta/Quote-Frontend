@@ -21,7 +21,7 @@ const QuoteCard=()=>{
 
     return (
         <>
-            <div className="card-for-qod mx-auto my-2 p-3">
+            <div className="quote-card  p-4">
             <div className="img-name mb-3">
                 <div className="img-name-tim">
                     <img className="qod-image" src={x.image} alt={x.author} />

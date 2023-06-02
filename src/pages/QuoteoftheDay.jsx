@@ -32,7 +32,7 @@ const QuoteoftheDay=()=>{
 
     return (
         <>
-        <p className="top-heading">Quote Of The Day 🌅</p>
+        <h4 className="top-heading shadow-lg">Quote Of The Day 🌅</h4>
 
         <div className="card-for-qod mx-auto p-3">
             <div className="img mb-3">

@@ -27,18 +27,18 @@ const SideLinks=()=>{
                 <li>
                 <NavLink className={({ isActive }) => (isActive ? 'text-dark navigation-list-li' : 'grey-color navigation-list-li')} to="/">
                     <AiFillHome size={25}/>
-                    <span className="list-name">
+                    <h5 className="list-name">
                     Home
-                    </span>
+                    </h5>
                 </NavLink>
                 </li>
                 <li>
                 <NavLink className={({ isActive }) => (isActive ? 'text-dark navigation-list-li' : 'grey-color navigation-list-li')} to="/explore">
 
                     <RiHashtag size={25}/>
-                    <span className="list-name">
+                    <h5 className="list-name">
                     Explore
-                    </span>
+                    </h5>
                 </NavLink>
                 </li>
                 {state?(
@@ -46,27 +46,27 @@ const SideLinks=()=>{
                 <li>
                 <NavLink className={({ isActive }) => (isActive ? 'text-dark navigation-list-li' : 'grey-color navigation-list-li')} to="/notification">
                     <IoIosNotificationsOutline size={25}/>
-                    <span className="list-name">
+                    <h5 className="list-name">
                     Notification
-                    </span>
+                    </h5>
                 </NavLink>
                 </li>
                 <li>
                 <NavLink className={({ isActive }) => (isActive ? 'text-dark navigation-list-li' : 'grey-color navigation-list-li')} to="/bookmark">
 
                     <MdOutlineBookmark size={25}/>
-                <span className="list-name">
+                <h5 className="list-name">
                 Bookmark
-                </span>
+                </h5>
                 </NavLink>
                 </li>
                 <li>
                 <NavLink className={({ isActive }) => (isActive ? 'text-dark navigation-list-li' : 'grey-color navigation-list-li')} to="/profile">
 
                     <CgProfile size={25}/>
-                <span className="list-name">
+                <h5 className="list-name">
                 Profile
-                </span>
+                </h5>
                 </NavLink>
                 </li>
                 
@@ -74,36 +74,36 @@ const SideLinks=()=>{
                 <NavLink className={({ isActive }) => (isActive ? 'text-dark navigation-list-li' : 'grey-color navigation-list-li')} to="/list">
 
                     <AiOutlineOrderedList size={25}/>
-                <span className="list-name">
+                <h5 className="list-name">
                 List
-                </span>
+                </h5>
                 </NavLink>
                 </li>
                 <li>
                 <NavLink className={({ isActive }) => (isActive ? 'text-dark navigation-list-li' : 'grey-color navigation-list-li')} to="/more">
                     <FiMoreHorizontal size={25}/>
-                <span className="list-name">
+                <h5 className="list-name">
                 More
-                </span>
+                </h5>
                 </NavLink>
                 </li>
-                <li>
+                {/* <li>
                 <NavLink className={({ isActive }) => (isActive ? 'text-dark navigation-list-li' : 'grey-color navigation-list-li')} to="/logout">
                     <FiLogOut size={25}/>
-                <span className="list-name">
+                <h5 className="list-name">
                 Logout
-                </span>
+                </h5>
                 </NavLink>
-                </li>
+                </li> */}
                 </>
                 ):(
                     <>
                         <li>
                             <NavLink className={({ isActive }) => (isActive ? 'text-dark navigation-list-li' : 'grey-color navigation-list-li')} to="/login">
                                 <AiOutlineLogin size={25}/>
-                            <span className="list-name">
+                            <h5 className="list-name">
                             Login
-                            </span>
+                            </h5>
                             </NavLink>
                         </li>
                     </>
@@ -114,9 +114,9 @@ const SideLinks=()=>{
                     <DarkModeToggle
                         onChange={()=>setIsDarkMode(!isDarkMode)}
                         checked={isDarkMode}
-                        size={50}
+                        size={30}
                     />
-                    <span className="list-name">Mode</span>
+                    <h5 className="list-name">Mode</h5>
                 </li>
                 <NavLink className={({ isActive }) => (isActive ? 'text-dark navigation-list-li' : 'grey-color navigation-list-li')} to="/quoteofday">
                     <button className="button-p1">Quote Of Day</button>

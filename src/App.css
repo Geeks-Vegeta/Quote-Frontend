@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geologica&display=swap');
 .dark-mode {
   color: #ffffff;
   background-color: #000000;
@@ -16,19 +18,34 @@
 
 .top-heading{
   position: sticky;  
-    top:1px;  
-    padding: 10px;  
-    font-size:20px;  
-    background-color: rgba(202, 204, 204, 0.87);  
+  top:1px;  
+  padding: 10px;  
+  font-size:20px;  
+  font-family: 'Geologica', sans-serif;;
+  background-color: rgba(202, 204, 204, 0.87);  
 }
 
 .card-for-qod{
   width: 30rem;
   min-height: 15rem;
   overflow: hidden;
-  border: 1px solid rgb(136, 134, 134);
+  border: 1px solid rgba(119, 115, 115, 0.459);
   border-radius: 15px;
   background-color: transparent;
+}
+
+.quote-card {
+  min-height: 15rem;
+  border: none;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.342);
+  background-color: transparent;
+
+}
+
+.quote-card:hover{
+  background-color: #c9c2c254;
+  cursor: pointer;
 }
 
 .card-for-qod:hover{
@@ -60,6 +77,16 @@
 
 .quote-tags{
   display: flex;
+}
+
+.quote{
+  font-family: 'Playfair', serif;
+  font-size: larger;
+}
+
+.author{
+  font-family: 'Playfair', serif;
+
 }
 
 .quote-tags span{

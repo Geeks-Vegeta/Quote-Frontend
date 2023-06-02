@@ -18,8 +18,8 @@ const Explore=()=>{
 
     return (
         <>
-        <div className="p-2 mb-2 top-heading shadow-lg">
-            <h3>Explore</h3>
+        <div className="top-heading shadow-lg">
+            <h4>Explore</h4>
         </div>
         {recent.map((data, idx)=>{
             return (

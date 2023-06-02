@@ -5,9 +5,9 @@ const Home=()=>{
     return (
         <>
         <div className="top-heading shadow-lg">
-            <h3>Home</h3>
+            <h4>Home</h4>
         </div>
-        <div className="quote-cards my-3">
+        <div className="quote-cards">
             <QuoteCard/>
             <QuoteCard/>
             <QuoteCard/>
