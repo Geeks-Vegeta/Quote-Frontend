@@ -15,6 +15,11 @@ import { LoginContext } from "../App";
 import EditProfile from "../pages/Editprofile";
 import Logout from "../pages/Logout";
 import QuoteoftheDay from "../pages/QuoteoftheDay";
+import Accessibility from "../targetPages/Accessibility";
+import AddInfo from "../targetPages/AddInfor";
+import Cookie from "../targetPages/Cookie";
+import Privacy from "../targetPages/Privacy";
+import Tos from "../targetPages/Tos";
 
 const Nav=()=>{
     const {state, dispatch} = useContext(LoginContext);
@@ -39,6 +44,11 @@ const Nav=()=>{
                 <Route exact path="/" element={<Home/>}/>
                 <Route exact path="/explore" element={<Explore/>}/>
                 <Route exact path="/quoteofday" element={<QuoteoftheDay/>}/>
+                <Route exact path="/accessibility" element={<Accessibility/>}/>
+                <Route exact path="/addinfo" element={<AddInfo/>}/>
+                <Route exact path="/cookie" element={<Cookie/>}/>
+                <Route exact path="/privacy" element={<Privacy/>}/>
+                <Route exact path="/tos" element={<Tos/>}/>
 
                 {state?(
                     <>

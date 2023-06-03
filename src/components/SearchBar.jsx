@@ -25,36 +25,36 @@ const SearchBar=()=>{
             <div className="new-to-quotser my-3">
                 <h5>New to Quoteser?</h5>
                 <span className="text-muted">Sign up now to get your own personalized timeline!</span>
-                <div className="login-button text-center my-1">
                     <NavLink className={({ isActive }) => (isActive ? 'text-dark' : 'grey-color')} to="/login">
+                    <div className="login-button text-center my-1">
+
                         <AiOutlineLogin size={20} color="red"/>
                         <span className="mx-3 text-dark login-name">
                             Login
                         </span>
+                    </div>
+
                     </NavLink>
-                </div>
                 <p className="my-2">By signing up, you agree to the Terms of Service and Privacy Policy, including Cookie Use.</p>
 
             </div>
                 <div className="privacy-term mx-auto">
-                    <a href="#">
-                        <span>Terms of Service</span>
-                    </a>
-                    <a href="#">
-                        <span>Privacy Policy</span>
-                    </a>
-                    <a href="#">
-                        <span>Cookie Policy</span>
-                    </a>
-                    <a href="#">
-                        <span>Accessibility</span>
-                    </a>
-                    <a href="#">
-                    <span>Ads info</span>
-                    </a>
-                    <a href="#">
-                        <span className="text-dark">© 2023 X Corp.</span>
-                    </a>
+                    <NavLink  to="/tos">
+                        <span className="text-dark">Terms of Service</span>
+                    </NavLink>
+                    <NavLink  to="/privacy">
+                        <span className="text-dark">Privacy Policy</span>
+                    </NavLink>
+                    <NavLink  to="/cookie">
+                        <span className="text-dark">Cookie Policy</span>
+                    </NavLink>
+                    <NavLink  to="/accessibility">
+                        <span className="text-dark">Accessibility</span>
+                    </NavLink>
+                    <NavLink  to="addinfo">
+                    <span className="text-dark">Ads info</span>
+                    </NavLink>
+                    <p className="text-dark mt-1">© 2023 X Corp.</p>
                 </div>
            
             </>
