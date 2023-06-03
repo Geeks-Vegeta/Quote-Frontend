@@ -1,31 +1,32 @@
 import React from "react";
-import { AiFillHeart } from "react-icons/ai";
-import { IoIosShareAlt } from "react-icons/io";
-import { BsRepeat } from "react-icons/bs";
-import { CiExport } from "react-icons/ci";
+import { AiOutlineHeart } from "react-icons/ai";
+import { TbShare3 } from "react-icons/tb";
+import { BsRepeat, BsBookmark } from "react-icons/bs";
+import { BiDownload } from "react-icons/bi";
 import { NavLink } from "react-router-dom";
 import { FiMoreHorizontal } from "react-icons/fi";
-
-const QuoteCard=()=>{
+import { RWebShare } from "react-web-share";
+import { toJpeg } from 'html-to-image';
+const QuoteCard=(props)=>{
 
     let formatter = Intl.NumberFormat('en', { notation: 'compact' });
 
-    let x=
-    {
-        "_id": "6472ffd766345c93c34b2189",
-        "quote": "You only live once, but if you do it right, once is enough",
-        "author": "Mae West",
-        "likes": "115457",
-        "image": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/authors/1198551937i/259666._UX200_CR0,16,200,200_.jpg"
-      }
+    const DownloadImage=()=>{
+        toJpeg(document.getElementById(`quote-card-${props.idx}`))
+      .then(function (dataUrl) {
+        var link = document.createElement('a');
+        link.download = `${window.location.href}.jpg`;
+        link.href = dataUrl;
+        link.click();
+      })}
 
     return (
         <>
-            <div className="quote-card  p-4">
+            <div id={`quote-card-${props.idx}`} className="quote-card  p-4">
             <div className="img-name mb-3">
                 <div className="img-name-tim">
-                    <img className="qod-image" src={x.image} alt={x.author} />
-                    <span className="mx-2">{x.author}</span>
+                    <img className="qod-image" src={props.image} alt={props.author} />
+                    <span className="mx-2">{props.author}</span>
                     <span className="text-muted">@shreyas</span>
                     <span className="text-muted"> .12h</span>
                 </div>
@@ -35,16 +36,33 @@ const QuoteCard=()=>{
                 
             </div>
             <div className="quote">
-                <p>&ldquo; {x.quote}  &rdquo;</p>
+                <p>&ldquo; {props.quote}  &rdquo;</p>
             </div>
             <div>
-                <p className="author">&ndash; {x.author}</p>
+                <p className="author">&ndash; {props.author}</p>
             </div>
             <div className="like-repost-share">
-                <span> <AiFillHeart color="red" size="20"/>{formatter.format(x.likes)}  </span>
-                <span> <IoIosShareAlt size="20"/> </span>
-                <span> <BsRepeat size="20"/> </span>
-                <span> <CiExport size="20"/> </span>
+                <span className="text-small"> <AiOutlineHeart className="heart-icon" size="20"/>{formatter.format(props.likes)}  </span>
+                <span> 
+                    <RWebShare
+                        data={{
+                        text: `${props.quote} - ${props.author}`,
+                        url: "https://on.natgeo.com/2zHaNup",
+                        title: "Share this Quote"
+                        }}
+                        onClick={() => console.info("share successful!")}
+                    >
+                        <TbShare3 className="share-icon" size="20"/>
+                    </RWebShare>
+                </span>
+                
+                <span className="repeate-icon"> <BsRepeat size="20"/> </span>
+                <span className="bookmark-icon"> <BsBookmark size="20"/> </span>
+
+                {/* BsBookmark */}
+                <span> <BiDownload className="download-icon" size="22"
+                onClick={DownloadImage}
+                /> </span>
             </div>
             <div className="quote-tags mt-3">
                 <NavLink>
