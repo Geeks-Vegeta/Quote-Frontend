@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import {AiOutlineSearch } from "react-icons/ai";
 import "./searchbar.css";
 import { LoginContext } from "../App";
-import { AiFillHome, AiOutlineOrderedList, AiOutlineLogin } from "react-icons/ai";
+import { AiOutlineLogin } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
 
 const SearchBar=()=>{
@@ -37,12 +37,24 @@ const SearchBar=()=>{
 
             </div>
                 <div className="privacy-term mx-auto">
-                    <span>Terms of Service</span>
-                    <span>Privacy Policy</span>
-                    <span>Cookie Policy</span>
-                    <span>Accessibility</span>
+                    <a href="#">
+                        <span>Terms of Service</span>
+                    </a>
+                    <a href="#">
+                        <span>Privacy Policy</span>
+                    </a>
+                    <a href="#">
+                        <span>Cookie Policy</span>
+                    </a>
+                    <a href="#">
+                        <span>Accessibility</span>
+                    </a>
+                    <a href="#">
                     <span>Ads info</span>
-                    <span>© 2023 X Corp.</span>
+                    </a>
+                    <a href="#">
+                        <span className="text-dark">© 2023 X Corp.</span>
+                    </a>
                 </div>
            
             </>
