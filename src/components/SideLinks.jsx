@@ -98,14 +98,14 @@ const SideLinks=()=>{
                 </>
                 ):(
                     <>
-                        <li>
+                        {/* <li>
                             <NavLink className={({ isActive }) => (isActive ? 'text-dark navigation-list-li' : 'grey-color navigation-list-li')} to="/login">
                                 <AiOutlineLogin size={25}/>
                             <h5 className="list-name">
                             Login
                             </h5>
                             </NavLink>
-                        </li>
+                        </li> */}
                     </>
                 )}
 
@@ -114,7 +114,7 @@ const SideLinks=()=>{
                     <DarkModeToggle
                         onChange={()=>setIsDarkMode(!isDarkMode)}
                         checked={isDarkMode}
-                        size={30}
+                        size={40}
                     />
                     <h5 className="list-name">Mode</h5>
                 </li>

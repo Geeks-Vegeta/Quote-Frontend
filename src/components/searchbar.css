@@ -11,3 +11,42 @@
 .magnifying{
     color: rgb(68, 82, 82);
 }
+
+
+.privacy-term{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.privacy-term span{
+    margin: 0 3px;
+    cursor: pointer;
+    font-size: 0.7rem;
+}
+
+.new-to-quotser{
+    border-radius: 0.9rem;
+    padding: 0.5rem;
+    height: 14rem;
+    border: 1px solid rgba(128, 128, 128, 0.404);
+}
+
+.new-to-quotser span{
+    font-size:0.6rem;
+
+}
+
+.new-to-quotser p{
+    font-size:0.7rem;
+
+}
+
+.login-button{
+    padding: 5px;
+    border-radius: 1rem;
+    border: 1px solid rgba(83, 83, 83, 0.329);
+}
+
+.login-button span{
+    font-size: 0.9rem;
+}
