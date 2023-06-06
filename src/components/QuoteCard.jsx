@@ -7,6 +7,7 @@ import { NavLink } from "react-router-dom";
 import { FiMoreHorizontal } from "react-icons/fi";
 import { RWebShare } from "react-web-share";
 import { toJpeg } from 'html-to-image';
+import { MDBTooltip } from "mdb-react-ui-kit";
 const QuoteCard=(props)=>{
 
     let formatter = Intl.NumberFormat('en', { notation: 'compact' });
@@ -42,7 +43,11 @@ const QuoteCard=(props)=>{
                 <p className="author">&ndash; {props.author}</p>
             </div>
             <div className="like-repost-share">
-                <span className="text-small"> <AiOutlineHeart className="heart-icon" size="20"/>{formatter.format(props.likes)}  </span>
+            <MDBTooltip  tag='a'  title='like'>
+                    <span className="text-small heart-icon"> <AiOutlineHeart  size="20"/>{formatter.format(props.likes)}  </span>
+            </MDBTooltip>
+            <MDBTooltip  tag='a'  title='share'>
+
                 <span> 
                     <RWebShare
                         data={{
@@ -55,14 +60,21 @@ const QuoteCard=(props)=>{
                         <TbShare3 className="share-icon" size="20"/>
                     </RWebShare>
                 </span>
-                
-                <span className="repeate-icon"> <BsRepeat size="20"/> </span>
-                <span className="bookmark-icon"> <BsBookmark size="20"/> </span>
+            </MDBTooltip>
+            <MDBTooltip  tag='a'  title='repost'>
 
+                <span className="repeate-icon"> <BsRepeat size="20"/> </span>
+            </MDBTooltip>
+            <MDBTooltip  tag='a'  title='bookmark'>
+
+                <span className="bookmark-icon"> <BsBookmark size="20"/> </span>
+            </MDBTooltip>
                 {/* BsBookmark */}
-                <span> <BiDownload className="download-icon" size="22"
-                onClick={DownloadImage}
-                /> </span>
+                <MDBTooltip  tag='a'  title='download'>
+                    <span> <BiDownload className="download-icon" size="22"
+                    onClick={DownloadImage}
+                    /> </span>
+                </MDBTooltip>
             </div>
             <div className="quote-tags mt-3">
                 <NavLink>
