@@ -44,12 +44,14 @@
 }
 
 .quote-card:hover{
-  background-color: #b5adad26;
+  border-bottom: 1px solid rgba(0, 255, 191, 00.342);
+  border-left: 1px solid rgba(0, 255, 191, 00.342);
+
   cursor: pointer;
 }
 
 .card-for-qod:hover{
-  background-color: #b5adad26;
+  border: 1px solid rgb(0, 255, 106);
   cursor: pointer;
 }
 

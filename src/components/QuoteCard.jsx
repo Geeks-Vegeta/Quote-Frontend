@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import { TbShare3 } from "react-icons/tb";
 import { BsRepeat, BsBookmark } from "react-icons/bs";
@@ -8,18 +8,41 @@ import { FiMoreHorizontal } from "react-icons/fi";
 import { RWebShare } from "react-web-share";
 import { toJpeg } from 'html-to-image';
 import { MDBTooltip } from "mdb-react-ui-kit";
+import { LoginContext } from "../App";
+
+
 const QuoteCard=(props)=>{
 
     let formatter = Intl.NumberFormat('en', { notation: 'compact' });
+    const {isDarkMode}=useContext(LoginContext);
+
 
     const DownloadImage=()=>{
+        if(!isDarkMode)
+        {
+                let x=document.getElementById(`quote-card-${props.idx}`);
+                x.style.color="black";
+                x.style.backgroundColor="white";
+                toJpeg(document.getElementById(`quote-card-${props.idx}`))
+            .then(function (dataUrl) {
+                var link = document.createElement('a');
+                link.download = `${window.location.href}.jpg`;
+                link.href = dataUrl;
+                link.click();
+                x.style.color=null;
+                x.style.backgroundColor=null;
+            })
+
+        }
+        let x=document.getElementById(`quote-card-${props.idx}`);
         toJpeg(document.getElementById(`quote-card-${props.idx}`))
-      .then(function (dataUrl) {
-        var link = document.createElement('a');
-        link.download = `${window.location.href}.jpg`;
-        link.href = dataUrl;
-        link.click();
-      })}
+        .then(function (dataUrl) {
+            var link = document.createElement('a');
+            link.download = `${window.location.href}.jpg`;
+            link.href = dataUrl;
+            link.click();
+        })
+    }
 
     return (
         <>
