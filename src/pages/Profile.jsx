@@ -27,7 +27,6 @@ const Profile=()=>{
 
     return (
         <>
-        <div className="scroller">
 
         <div className="background-image">
             <img src={userData.background_image} height="300" width="568" alt="" />
@@ -109,7 +108,7 @@ const Profile=()=>{
                 <span className="mx-2">{userData.followers?userData.followers.length:0} Followers</span>
                 <span className="mx-2">{userData.following?userData.followers.length:0} Following</span>
             </div>
-        </div>
+
         </div>
 
         </>

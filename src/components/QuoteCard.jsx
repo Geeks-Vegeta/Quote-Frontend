@@ -9,6 +9,7 @@ import { RWebShare } from "react-web-share";
 import { toJpeg } from 'html-to-image';
 import { MDBTooltip } from "mdb-react-ui-kit";
 import { LoginContext } from "../App";
+import  moment from "moment";
 
 
 const QuoteCard=(props)=>{
@@ -50,9 +51,9 @@ const QuoteCard=(props)=>{
             <div className="img-name mb-3">
                 <div className="img-name-tim">
                     <img className="qod-image" src={props.image} alt={props.author} />
-                    <span className="mx-2">{props.author}</span>
-                    <span className="text-muted">@shreyas</span>
-                    <span className="text-muted"> .12h</span>
+                    <span className="mx-1">{props.author}</span>
+                    <span className="text-muted small-text">@{props.author?props.author:"shreyas"}</span>
+                    <span className="text-muted small-text"> {props.postDate?moment(props.postDate).fromNow():"12h" }</span>
                 </div>
                 <div className="moreicon text-center">
                     <FiMoreHorizontal size={20}/>
@@ -100,18 +101,36 @@ const QuoteCard=(props)=>{
                 </MDBTooltip>
             </div>
             <div className="quote-tags mt-3">
-                <NavLink>
-                    <span>#Life</span>
-                </NavLink>
-                <NavLink>
-                    <span>#Love</span>
-                </NavLink>
-                <NavLink>
-                    <span>#Motivation</span>
-                </NavLink>
-                <NavLink>
-                    <span>#Success</span>
-                </NavLink>
+                {props.tags?(
+                    <>
+                    {props.tags.map((data,idx)=>{
+                        return(
+                            <>
+                            <NavLink>
+                                <span>#{data}</span>
+                            </NavLink>
+                            </>
+                        )
+                    })}
+
+                    </>
+                ):(
+                    <>
+                        <NavLink>
+                            <span>#Life</span>
+                        </NavLink>
+                        <NavLink>
+                            <span>#Love</span>
+                        </NavLink>
+                        <NavLink>
+                            <span>#Motivation</span>
+                        </NavLink>
+                        <NavLink>
+                            <span>#Success</span>
+                        </NavLink>
+                    </>
+                )}
+               
             </div>
         </div>
 

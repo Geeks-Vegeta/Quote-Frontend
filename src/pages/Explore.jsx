@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import QuoteCard from "../components/QuoteCard";
 
 const Explore=()=>{
 
@@ -8,6 +9,7 @@ const Explore=()=>{
 
         const getAllRecentPosts=async()=>{
             let {data}=await axios.get('https://quoteapi-q48j.onrender.com/quote/getAllRecentPosts');
+            console.log(data);
             setRecent(data);
         }
         getAllRecentPosts();
@@ -24,7 +26,14 @@ const Explore=()=>{
         {recent.map((data, idx)=>{
             return (
                 <>
-                <p>{data.quote}</p>
+                <QuoteCard
+                quote={data.quote}
+                author={data.user.username}
+                image={data.user.profile_pic}
+                likes={data.likes.length}
+                postDate={data.postDate}
+                tags={data.tags}
+                />
                 </>
             )
         })}
