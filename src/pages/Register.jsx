@@ -44,27 +44,23 @@ const Register=()=>{
             </center>
         </div>
         <h3 className="text-center">Sign Up New Account</h3>
-        <div className="cards-Login">
-            <MDBCard className="shadow-lg w-75 mx-auto">
-            <MDBCardBody>
-                <MDBCardTitle className="text-secondary">Sign Up</MDBCardTitle>
+        <div className="cards-register mx-auto p-4">
+           
                 <MDBInput value={name} onChange={(e)=>setName(e.target.value)} className="my-4"  label='UserName' id='typetext' type='text' />
                 <MDBInput value={email} onChange={(e)=>setEmail(e.target.value)} className="my-4"  label='Email' id='typeEmail' type='email' />
                 <MDBInput value={password} onChange={(e)=>setPassword(e.target.value)} className="my-4" label='Password' id='typePassword' type='password' />
                 <div className="text-center">
                 <MDBBtn className="w-75" onClick={createUser}>Register</MDBBtn>
-
                 </div>
-            </MDBCardBody>
-            </MDBCard>
+            
         </div>
-        <div className="card-signin shadow-lg my-4">
-            <MDBCard className="text-center mx-auto w-75">
+        <div className="card-signin my-4">
+            <div className="text-center mx-auto w-75">
                     <span className="p-1 text-secondary">Already have an account ? <NavLink to="/login">
                             Login
                         </NavLink>
                         </span>
-            </MDBCard>
+            </div>
         </div>
 
         </>

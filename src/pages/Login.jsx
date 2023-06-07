@@ -1,9 +1,5 @@
 import React, { useContext, useState } from "react";
 import {
-    MDBCard,
-    MDBCardBody,
-    MDBCardText,
-    MDBCardTitle,
     MDBBtn,
     MDBInput
 
@@ -70,10 +66,7 @@ const Login=()=>{
             </center>
         </div>
         <h3 className="text-center">Login To your Account</h3>
-        <div className="cards-Login text-center">
-            <MDBCard className="shadow-lg text-dark mx-auto w-75">
-            <MDBCardBody>
-                <MDBCardTitle>Login</MDBCardTitle>
+        <div className="cards-Login mx-auto p-4 text-center">
                 <form onSubmit={userLogin}>
                     <MDBInput className="my-4" value={email} 
                     onChange={(e)=>setEmail(e.target.value)} 
@@ -93,17 +86,13 @@ const Login=()=>{
                     </div>
                 </form>
 
-            </MDBCardBody>
-            </MDBCard>
+            
         </div>
-        <div className=".bg-light shadow-lg my-4">
-            <MDBCard className="text-center mx-auto w-75">
+        <div className="text-center my-4">
 
-                    <MDBCardText className="p-1 text-li">New to Quoteser ? <NavLink to="/register">Sign up</NavLink>
-                        
-                    </MDBCardText>
+            <span className="p-1 text-center text-li">New to Quoteser ? <NavLink to="/register">Sign up</NavLink>
+            </span>  
 
-            </MDBCard>
         </div>
         <ToastContainer/>
         </>

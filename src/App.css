@@ -190,3 +190,24 @@
 .small-quote{
   font-size: 0.7rem;
 }
+
+.cards-Login{
+  width: 30rem;
+  height: 15rem;
+  border: 1px solid rgba(4, 47, 97, 0.514);
+  border-radius: 10px;
+}
+
+.cards-Login:hover{
+  border: 1px solid rgba(21, 223, 112, 0.904);
+
+}
+
+.cards-register{
+
+  width: 30rem;
+  height: 20rem;
+  border: 1px solid rgba(4, 47, 97, 0.514);
+  border-radius: 10px;
+
+}
