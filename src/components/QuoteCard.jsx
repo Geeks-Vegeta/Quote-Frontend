@@ -34,7 +34,7 @@ const QuoteCard=(props)=>{
             })
 
         }
-        let x=document.getElementById(`quote-card-${props.idx}`);
+        document.getElementById(`quote-card-${props.idx}`);
         toJpeg(document.getElementById(`quote-card-${props.idx}`))
         .then(function (dataUrl) {
             var link = document.createElement('a');

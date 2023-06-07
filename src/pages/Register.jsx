@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 import {
-    MDBCard,
-    MDBCardBody,
-    MDBCardTitle,
     MDBBtn,
     MDBInput
   } from 'mdb-react-ui-kit';
@@ -21,7 +18,7 @@ const Register=()=>{
     const createUser=async()=>{
         try {
 
-            let {data}=await axios.post("https://quoteapi-q48j.onrender.com/register",{
+            await axios.post("https://quoteapi-q48j.onrender.com/register",{
             "username":name,
             "email":email,
             "password":password
