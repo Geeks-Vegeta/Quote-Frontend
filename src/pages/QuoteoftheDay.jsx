@@ -1,12 +1,13 @@
 import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { AiFillHeart } from "react-icons/ai";
-import { IoIosShareAlt } from "react-icons/io";
 import { BsRepeat } from "react-icons/bs";
 import { MDBTooltip } from  "mdb-react-ui-kit";
 import { BiDownload } from "react-icons/bi";
 import { toJpeg } from 'html-to-image';
 import { LoginContext } from "../App";
+import { TbShare3 } from "react-icons/tb";
+import { RWebShare } from "react-web-share";
 
 const QuoteoftheDay=()=>{
     const [quote, setQuote]=useState();
@@ -76,16 +77,26 @@ const QuoteoftheDay=()=>{
             </div>
             <div className="like-repost-share">
                 <MDBTooltip  tag='a'  title='like'>
-                    <span> <AiFillHeart color="red" size="20"/>{quote?formatter.format(quote.likes):formatter.format(x.likes)}  </span>
+                    <span className="text-small heart-icon"> <AiFillHeart color="red" size="20"/>{quote?formatter.format(quote.likes):formatter.format(x.likes)}  </span>
                 </MDBTooltip>
                <MDBTooltip  tag='a'  title='share'>
-                    <span> <IoIosShareAlt size="20"/> </span>
+
+               <RWebShare
+                        data={{
+                        text: `${quote?quote.quote:x.quote} - ${quote?quote.author:x.author}`,
+                        url: "https://on.natgeo.com/2zHaNup",
+                        title: "Share this Quote"
+                        }}
+                        onClick={() => console.info("share successful!")}
+                    >
+                        <TbShare3 className="share-icon" size="20"/>
+                    </RWebShare>
                 </MDBTooltip>
                 <MDBTooltip  tag='a'  title='repost'>
-                    <span> <BsRepeat size="20"/> </span>
+                    <span  className="repeate-icon"> <BsRepeat size="20"/> </span>
                 </MDBTooltip>
                 <MDBTooltip  tag='a'  title='download'>
-                    <span onClick={DownloadImage}> <BiDownload size="20"/> </span>
+                    <span onClick={DownloadImage}> <BiDownload className="download-icon" size="20"/> </span>
                 </MDBTooltip>
             </div>
         </div>
