@@ -1,0 +1,59 @@
+
+
+.change-password{
+    width: 32rem;
+    height: 12rem;
+    border-radius: 10px;
+    border: 1px solid rgba(59, 148, 124, 0.747);
+}
+
+.change-password>input[type='text']{
+    width: 20rem;
+    height: 2.5rem;
+    padding: 1;
+    text-align: center;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    border: 1px solid rgba(9, 112, 31, 0.438);
+    border-radius: 10px;
+}
+
+.password-button{
+    width: 10rem;
+    outline: none;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 10px;
+    background-color: blueviolet;
+    color: white;
+}
+
+.password-button:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(153, 13, 134);
+}
+
+.delete-user{
+    width: 32rem;
+    height: 14rem;
+    border-radius: 10px;
+    border: 1px solid rgba(59, 148, 124, 0.747);
+}
+
+
+.deleteuser-button{
+    width: 10rem;
+    outline: none;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 10px;
+    background-color: rgb(6, 248, 155);
+    color: white;
+}
+
+.deleteuser-button:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(153, 13, 134);
+    cursor: not-allowed;
+}
