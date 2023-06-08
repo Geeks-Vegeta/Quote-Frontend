@@ -41,6 +41,14 @@
     border: 1px solid rgba(59, 148, 124, 0.747);
 }
 
+.verify-user{
+    width: 32rem;
+    height: 22rem;
+    border-radius: 10px;
+    border: 1px solid rgba(59, 148, 124, 0.747);
+}
+
+
 
 .deleteuser-button{
     width: 10rem;

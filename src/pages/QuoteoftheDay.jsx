@@ -62,7 +62,7 @@ const QuoteoftheDay=()=>{
 
     return (
         <>
-        <h4 className="top-heading shadow-lg">Quote Of The Day 🌅</h4>
+        <h4 className="m-3">Quote Of The Day &ndash;</h4>
 
         <div id="card-for-qod" className="card-for-qod mx-auto p-3">
             <div className="img mb-3">

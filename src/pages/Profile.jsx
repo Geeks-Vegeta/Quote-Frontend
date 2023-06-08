@@ -6,7 +6,8 @@ import { NavLink } from "react-router-dom";
 import { HiLocationMarker } from "react-icons/hi";
 import { AiOutlineGithub,AiFillLinkedin,AiFillTwitterCircle,AiFillInstagram } from "react-icons/ai";
 import { BsFacebook,BsPeopleFill } from "react-icons/bs";
-
+import {MdVerified, MdFormatQuote} from "react-icons/md";
+import {HiSpeakerphone} from "react-icons/hi";
 const Profile=()=>{
 
     const [userData, setUserData]=useState([]);
@@ -33,14 +34,14 @@ const Profile=()=>{
         </div>
         <div className="shift-profileinfo">
             <img className="profile-pic ms-auto" src={userData.profile_pic} alt="" />
-            <div className="profile-info">
-                <p>@{userData.username}</p>
+            <div className="profile-info mt-4">
+                <p>@{userData.username} <MdVerified color="blue"/> </p>
                 <div className="icons">
                 <NavLink className="mx-2"  to="/editprofile">
-                    <FiEdit2 />
+                    <FiEdit2 color="black" />
                 </NavLink>
                 <NavLink className="mx-2"  to="/more">
-                    <FiMoreHorizontal />
+                    <FiMoreHorizontal color="black" />
                 </NavLink>
                 </div>
             </div>
@@ -53,7 +54,7 @@ const Profile=()=>{
                     {userData.github_link?(
                         <>
                         <a href={userData.github_link}  rel="noreferrer" target="_blank">
-                            <span><AiOutlineGithub size={20}/></span>
+                            <span><AiOutlineGithub color="black" size={20}/></span>
                         </a>
                         </>
                     ):(
@@ -63,7 +64,7 @@ const Profile=()=>{
                      {userData.linkedIn_link?(
                         <>
                         <a href={userData.linkedIn_link} rel="noreferrer" target="_blank">
-                            <span><AiFillLinkedin size={20}/></span>
+                            <span><AiFillLinkedin  color="black" size={20}/></span>
                         </a>
                         </>
                     ):(
@@ -73,7 +74,7 @@ const Profile=()=>{
                      {userData.twitter_link?(
                         <>
                         <a href={userData.twitter_link} rel="noreferrer" target="_blank">
-                            <span><AiFillTwitterCircle size={20}/></span>
+                            <span><AiFillTwitterCircle color="black" size={20}/></span>
                         </a>
                         </>
                     ):(
@@ -83,7 +84,7 @@ const Profile=()=>{
                     {userData.instagram_link?(
                         <>
                         <a href={userData.instagram_link} rel="noreferrer" target="_blank">
-                            <span><AiFillInstagram size={20}/></span>
+                            <span><AiFillInstagram color="black" size={20}/></span>
                         </a>
 
                         </>
@@ -94,7 +95,7 @@ const Profile=()=>{
                      {userData.facebook_link?(
                         <>
                         <a href={userData.facebook_link} rel="noreferrer" target="_blank">
-                            <span><BsFacebook size={20}/></span>
+                            <span><BsFacebook color="black" size={20}/></span>
                         </a>
                         </>
                     ):(
@@ -108,6 +109,12 @@ const Profile=()=>{
                 <span className="mx-2">{userData.followers?userData.followers.length:0} Followers</span>
                 <span className="mx-2">{userData.following?userData.followers.length:0} Following</span>
             </div>
+            <hr className="w-75 mx-auto" />
+
+        </div>
+        <div className="promote-addprofile">
+            <button className="promote"> <HiSpeakerphone/> Promote </button>
+            <button className="create"> <MdFormatQuote/> Create </button>
 
         </div>
 

@@ -4,9 +4,32 @@ import { MDBCheckbox } from "mdb-react-ui-kit";
 
 const More=()=>{
     const [isChecked, setIsChecked]=useState(false);
+    const [isVerifiedChecked, setIsVerifiedChecked]=useState(false);
+
     return (
         <>
-        <h4 className="top-heading shadow-lg">More</h4>
+        <div className="top-heading">
+            <h4>More</h4>
+        </div>
+        <div className="my-2">
+        <div className="verify-user p-3 mx-auto">
+      
+            <h4>Verify User</h4>
+            <p>Verified User get's more attention of user's and also get promoted and followed by several followers</p>
+            <p>To verify this user,we need to authenticate you quote's wheather it's your's own or copied from some one.</p>
+            <p>To verify this account it may take week or month</p>
+            <MDBCheckbox name='inlineCheck' id='inlineCheckbox1' value='option1' 
+            label='Are you sure you want to verify this account ?' 
+            checked={isVerifiedChecked}
+            onChange={()=>setIsVerifiedChecked(!isVerifiedChecked)}
+            inline />
+            <div className="text-center my-3">
+                <button className={isVerifiedChecked?"password-button":"deleteuser-button"} >Verify</button>
+            </div>
+
+
+                                    
+        </div>
 
         <div className="change-password my-3 mx-auto p-3">
                 <h4>Change password</h4>
@@ -33,7 +56,7 @@ const More=()=>{
 
                                   
         </div>
-        
+        </div>
         </>
     )
 }

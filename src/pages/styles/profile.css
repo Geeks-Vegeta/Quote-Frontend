@@ -1,8 +1,10 @@
 .shift-profileinfo{
-    position: relative;
-    top: -100px;
     padding: 1rem;
 
+}
+.profile-pic{
+    position: absolute;
+    top: 200px;
 }
 
 .profile-pic{
@@ -25,4 +27,37 @@
 }
 .social-links span{
     margin-right: 0.5rem;
+}
+
+.promote-addprofile{
+    display: flex;
+    justify-content: space-around;
+}
+
+.promote{
+    width: 10rem;
+    outline: none;
+    padding: 0.5rem;
+    border: none;
+    background-color: rgb(141, 126, 105);
+    border-radius: 10px;
+}
+
+.promote:hover{
+    background-color: black;
+    color: white;
+    cursor: not-allowed;
+}
+.create{
+    width: 10rem;
+    outline: none;
+    padding: 0.5rem;
+    border: none;
+    background-color: rgb(141, 126, 105);
+    border-radius: 10px;
+}
+
+.create:hover{
+    background-color: black;
+    color: white;
 }

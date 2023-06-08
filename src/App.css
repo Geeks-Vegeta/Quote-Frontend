@@ -22,7 +22,7 @@
   padding: 10px;  
   font-size:20px;  
   font-family: 'Geologica', sans-serif;;
-  background-color: rgba(202, 204, 204, 0.87);  
+  background-color: rgba(202, 204, 204, 0.192);  
 }
 
 .card-for-qod{
@@ -44,9 +44,6 @@
 }
 
 .quote-card:hover{
-  border-bottom: 1px solid rgba(0, 255, 191, 00.342);
-  border-left: 1px solid rgba(0, 255, 191, 00.342);
-
   cursor: pointer;
 }
 

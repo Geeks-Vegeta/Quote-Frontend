@@ -16,7 +16,7 @@ const SearchBar=()=>{
                     <AiOutlineSearch size={20} className="m-1 magnifying"/>
                     <input width="150" className="border-text" placeholder="search for users" type="text" name="" id="" />
                 </div>
-                <div className="who-to-follow m-3 p-3">
+                <div className="who-to-follow m-1 my-3 p-3">
                     <h5>Follow</h5>
                 </div>
             </>
@@ -38,7 +38,11 @@ const SearchBar=()=>{
                 <p className="my-2">By signing up, you agree to the Terms of Service and Privacy Policy, including Cookie Use.</p>
 
             </div>
-                <div className="privacy-term mx-auto">
+               
+           
+            </>
+        )}
+         <div className="privacy-term mx-auto">
                     <NavLink  to="/tos">
                         <span className="text-dark">Terms of Service</span>
                     </NavLink>
@@ -56,10 +60,6 @@ const SearchBar=()=>{
                     </NavLink>
                     <p className="text-dark mt-1">© 2023 X Corp.</p>
                 </div>
-           
-            </>
-        )}
-        
         </>
     )
 }
