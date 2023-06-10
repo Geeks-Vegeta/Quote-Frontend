@@ -20,6 +20,7 @@ import AddInfo from "../targetPages/AddInfor";
 import Cookie from "../targetPages/Cookie";
 import Privacy from "../targetPages/Privacy";
 import Tos from "../targetPages/Tos";
+import AddQuotes from "../pages/Addquotes";
 
 const Nav=()=>{
     const {state, dispatch} = useContext(LoginContext);
@@ -57,6 +58,7 @@ const Nav=()=>{
                         <Route exact path="/profile" element={<Profile/>}/>
                         <Route exact path="/bookmark" element={<Bookmark/>}/>
                         <Route exact path="/list" element={<List/>}/>
+                        <Route exact path="/addquote" element={<AddQuotes/>}/>
                         <Route exact path="/editprofile" element={<EditProfile/>}/>
                         <Route exact path="/logout" element={<Logout/>}/>
                     </>

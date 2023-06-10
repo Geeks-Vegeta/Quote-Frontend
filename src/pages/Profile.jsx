@@ -114,7 +114,9 @@ const Profile=()=>{
         </div>
         <div className="promote-addprofile">
             <button className="promote"> <HiSpeakerphone/> Promote </button>
-            <button className="create"> <MdFormatQuote/> Create </button>
+            <NavLink to="/addquote">
+                <button className="create"> <MdFormatQuote/> Create </button>
+            </NavLink>
 
         </div>
 

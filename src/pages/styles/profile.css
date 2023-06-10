@@ -47,6 +47,8 @@
     background-color: black;
     color: white;
     cursor: not-allowed;
+    border: 1px solid green;
+
 }
 .create{
     width: 10rem;
@@ -60,4 +62,5 @@
 .create:hover{
     background-color: black;
     color: white;
+    border: 1px solid green;
 }
