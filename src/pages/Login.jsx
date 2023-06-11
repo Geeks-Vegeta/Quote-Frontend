@@ -38,10 +38,10 @@ const Login=()=>{
             dispatch({type:"isLogin", payload:true});
             navigate("/")
         } catch (error) {
-            if(error.response.status==='401'){
+            if(error.response.status===401){
                 toast('UnAuthorised User', {
                     position: "top-center",
-                    autoClose: 5000,
+                    autoClose: 3000,
                     hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: true,

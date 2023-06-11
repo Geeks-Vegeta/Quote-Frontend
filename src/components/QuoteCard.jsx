@@ -53,7 +53,7 @@ const QuoteCard=(props)=>{
                     <img className="qod-image" src={props.image} alt={props.author} />
                     <span className="mx-1">{props.author}</span>
                     <span className="text-muted small-text">@{props.author?props.author:"shreyas"}</span>
-                    <span className="text-muted small-text"> {props.postDate?moment(props.postDate).fromNow():"12h" }</span>
+                    <span className="text-muted mx-2 small-text"> {props.postDate?moment(props.postDate).fromNow():"12h" }</span>
                 </div>
                 <div className="moreicon text-center">
                     <FiMoreHorizontal size={20}/>

@@ -8,18 +8,25 @@ import { AiOutlineGithub,AiFillLinkedin,AiFillTwitterCircle,AiFillInstagram } fr
 import { BsFacebook,BsPeopleFill } from "react-icons/bs";
 import {MdVerified, MdFormatQuote} from "react-icons/md";
 import {HiSpeakerphone} from "react-icons/hi";
+import LoadingComponent from "../components/LoadingComponent";
+import { MDBTooltip } from "mdb-react-ui-kit";
+
+
 const Profile=()=>{
 
     const [userData, setUserData]=useState([]);
+    const [loading, setLoading]= useState(false);
 
     useEffect(()=>{
         let token=localStorage.getItem('isauthtoken');
+        setLoading(true)
         const getUserProfile=async()=>{
             let {data}=await axios.get("https://quoteapi-q48j.onrender.com/user/currentuser",{
             headers: {
                 Authorization: 'Bearer ' + token //the token is a variable which holds the token
               }})
             setUserData(data);
+            setLoading(false);
         }
         getUserProfile();
     },[])
@@ -29,6 +36,14 @@ const Profile=()=>{
     return (
         <>
 
+        {loading?(
+            <>
+                <LoadingComponent/>
+            </>
+        ):(
+            <>
+            
+
         <div className="background-image">
             <img src={userData.background_image} height="300" width="568" alt="" />
         </div>
@@ -37,18 +52,40 @@ const Profile=()=>{
             <div className="profile-info mt-4">
                 <p>@{userData.username} <MdVerified color="blue"/> </p>
                 <div className="icons">
-                <NavLink className="mx-2"  to="/editprofile">
-                    <FiEdit2 color="black" />
-                </NavLink>
-                <NavLink className="mx-2"  to="/more">
-                    <FiMoreHorizontal color="black" />
-                </NavLink>
+
+                <MDBTooltip  tag='a'  title='edit'>
+                    <NavLink className="mx-2" style={{ color: 'gray' }}  to="/editprofile">
+                        <FiEdit2 />
+                    </NavLink>
+                    </MDBTooltip>
+                <MDBTooltip  tag='a'  title='more'>
+
+                    <NavLink className="mx-2" style={{ color: 'gray' }}  to="/more">
+                        <FiMoreHorizontal />
+                    </NavLink>
+                </MDBTooltip>
+
                 </div>
             </div>
             <div className="profile__info m-0">
-                <span>{userData.bio}</span>
-                <br />
-                <span><HiLocationMarker/> {userData.location}</span>
+                {userData.bio?(
+                    <>
+                    <span>{userData.bio}</span>
+                    <br />
+                    </>
+                ):(
+                    <>
+                    </>
+                )}
+                {userData.location?(
+                    <>
+                        <span><HiLocationMarker/> {userData.location}</span>
+
+                    </>
+                ):(
+                    <>
+                    </>
+                )}
             </div>
             <div className="social-links">
                     {userData.github_link?(
@@ -109,7 +146,7 @@ const Profile=()=>{
                 <span className="mx-2">{userData.followers?userData.followers.length:0} Followers</span>
                 <span className="mx-2">{userData.following?userData.followers.length:0} Following</span>
             </div>
-            <hr className="w-75 mx-auto" />
+            <hr />
 
         </div>
         <div className="promote-addprofile">
@@ -119,6 +156,10 @@ const Profile=()=>{
             </NavLink>
 
         </div>
+
+
+        </>
+        )}
 
         </>
     )

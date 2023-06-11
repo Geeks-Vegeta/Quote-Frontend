@@ -4,6 +4,8 @@ import "./pattern.css";
 import Nav from "../components/Nav";
 import SideLinks from "../components/SideLinks";
 import SearchBar from "../components/SearchBar";
+import { ToastContainer } from 'react-toastify';
+
 
 
 const Pattern=()=>{
@@ -18,6 +20,8 @@ const Pattern=()=>{
                 <MDBCol lg='6' className="border-left-right m-0 p-0">
 
                    <Nav/>
+                   <ToastContainer/>
+
 
                 </MDBCol>
                 <MDBCol lg='3' className="my-3">

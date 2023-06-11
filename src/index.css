@@ -4,3 +4,36 @@
   box-sizing: border-box;
 }
 
+@keyframes append-animate {
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(0);
+  }
+  100%{
+    transform: scale(1);
+
+  }
+  }
+
+.loading-image{
+  width: 10rem;
+  height: 10rem;
+  animation: append-animate 3s infinite;
+}
+
+.quotes-logo-loading{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  
+}
+
+.loading_component{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}

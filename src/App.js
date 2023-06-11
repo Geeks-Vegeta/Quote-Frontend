@@ -6,11 +6,16 @@ import {reducer, initialState} from "./reducer/loginReducer";
 import {
   MDBContainer
 } from 'mdb-react-ui-kit';
+import { ToastContainer, toast } from 'react-toastify';
+import LoadingPage from './components/Loadingpage';
+
 
 const LoginContext = createContext();
 function App() {
     const [isDarkMode, setIsDarkMode] = useState(false);
     const [state, dispatch] = useReducer(reducer, initialState);
+    const [loading, setLoading] = useState(true)
+
     const [width, setWidth] = useState(window.innerWidth);
     const handleWindowSizeChange = () => {
             setWidth(window.innerWidth);
@@ -18,6 +23,7 @@ function App() {
 
     useEffect(() => {
       window.addEventListener('resize', handleWindowSizeChange);
+      setTimeout(() => setLoading(false), 3000)
       return () => {
           window.removeEventListener('resize', handleWindowSizeChange);
       }
@@ -44,14 +50,23 @@ function App() {
         </MDBContainer>
         
         </>
+      ):(loading==false?(
+        <>
+            <LoginContext.Provider value={{state, dispatch, isDarkMode, setIsDarkMode}}>
+              <div className={isDarkMode?'dark-mode':'light-mode'}>
+                  <BrowserRouter>
+                  <Pattern/>
+                  </BrowserRouter>
+                  <ToastContainer/>
+              </div>
+            </LoginContext.Provider>
+        </>
       ):(
-    <LoginContext.Provider value={{state, dispatch, isDarkMode, setIsDarkMode}}>
-      <div className={isDarkMode?'dark-mode':'light-mode'}>
-        <BrowserRouter>
-        <Pattern/>
-        </BrowserRouter>
-      </div>
-    </LoginContext.Provider>
+        <>
+        <LoadingPage/>
+        </>
+      )
+       
     )}
     </>
   );
