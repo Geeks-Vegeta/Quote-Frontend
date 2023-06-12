@@ -21,6 +21,7 @@ import Cookie from "../targetPages/Cookie";
 import Privacy from "../targetPages/Privacy";
 import Tos from "../targetPages/Tos";
 import AddQuotes from "../pages/Addquotes";
+import Tags from "../pages/Tags";
 
 const Nav=()=>{
     const {state, dispatch} = useContext(LoginContext);
@@ -61,6 +62,8 @@ const Nav=()=>{
                         <Route exact path="/addquote" element={<AddQuotes/>}/>
                         <Route exact path="/editprofile" element={<EditProfile/>}/>
                         <Route exact path="/logout" element={<Logout/>}/>
+                        <Route exact path="/tag/:name" element={<Tags/>}/>
+
                     </>
                 ):(
                     <>
