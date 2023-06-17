@@ -22,8 +22,9 @@
   padding: 10px;  
   font-size:20px;  
   font-family: 'Geologica', sans-serif;;
-  background-color: rgba(202, 204, 204, 0.192);  
+  background-color: rgba(204, 209, 209, 0.459);  
 }
+
 
 .card-for-qod{
   width: 30rem;
@@ -58,6 +59,12 @@
   border-radius: 50%;
 }
 
+.qod-image-search{
+  width: 2rem;
+  height:2rem;
+  border-radius: 50%;
+}
+
 .text-li{
   color: #ff00bf;
 
@@ -76,6 +83,11 @@
 }
 textarea {
   resize: none;
+}
+
+.follow-users {
+  display: flex;
+  justify-content: space-between;
 }
 .author{
   display: flex;
@@ -112,13 +124,13 @@ textarea {
   justify-content: space-between;
 }
 
-.moreicon:hover{
+/* .moreicon:hover{
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
   background-color: #4d324471;
   transition: 0.1s ease;
-}
+} */
 
 .repeate-icon:hover{
   color: #ff00bf;
@@ -223,7 +235,7 @@ textarea {
   font-size: 12px;
 }
 
-.quote-tags{
+.quote-tagss{
   display: flex;
   width: 30rem;
   height: 15rem;
@@ -241,6 +253,7 @@ textarea {
   background-color: rgba(0, 255, 255, 0.575);
   color: rgb(59, 19, 39);
 }
+
 
 
 .quote-tags-span:hover{

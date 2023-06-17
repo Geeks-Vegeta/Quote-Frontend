@@ -15,7 +15,7 @@ const List=()=>{
         <div className="lists-heading">
             <p className="text-center my-4">Here you can find a lot of quotes by there tag's </p>
         </div>
-        <div className="quote-tags mx-auto">
+        <div className="quote-tagss mx-auto">
         {tags.map((data,idx)=>(
             <NavLink to={`/tag/${data}`}>
                 <span className="quote-tags-span" key={idx}>{data}</span>

@@ -70,7 +70,6 @@ const QuoteCard=(props)=>{
             <MDBTooltip  tag='a'  title='like'>
                     <span className="text-small heart-icon"> <AiOutlineHeart  size="20"/>{formatter.format(props.likes)}  </span>
             </MDBTooltip>
-            <MDBTooltip  tag='a'  title='share'>
 
                 <span> 
                     <RWebShare
@@ -84,7 +83,6 @@ const QuoteCard=(props)=>{
                         <TbShare3 className="share-icon" size="20"/>
                     </RWebShare>
                 </span>
-            </MDBTooltip>
             <MDBTooltip  tag='a'  title='repost'>
 
                 <span className="repeate-icon"> <BsRepeat size="20"/> </span>

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import {AiOutlineSearch } from "react-icons/ai";
 import "./searchbar.css";
 import { LoginContext } from "../App";
@@ -7,6 +7,8 @@ import { NavLink } from "react-router-dom";
 
 const SearchBar=()=>{
     const {state, dispatch} = useContext(LoginContext);
+    const [search, setSearch] = useState("");
+
     return (
         <>
         
@@ -14,11 +16,71 @@ const SearchBar=()=>{
             <>
                 <div className="search-bar">
                     <AiOutlineSearch size={20} className="m-1 magnifying"/>
-                    <input width="150" className="border-text" placeholder="search for users" type="text" name="" id="" />
+                    <input value={search} onChange={(e)=>setSearch(e.target.value)} width="150" className="border-text" placeholder="search for users" type="text" name="" id="" />
                 </div>
-                <div className="who-to-follow m-1 my-3 p-3">
-                    <h5>Follow</h5>
+
+                {search.length===0?(
+                    <>  
+
+<div className="follow-who m-1 my-3 p-3">
+                    <h5 className="">who to follow</h5>
+                    <div className="users-follow my-1">
+                        <div className="follow-users my-3">
+                            <div className="image-name">
+                                <img className="qod-image-search mx-1" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/authors/1198551937i/259666._UX200_CR0,16,200,200_.jpg" alt="" />
+                                <span>Shreyas</span>
+                            </div>
+                            <button className="follow-button">follow</button>
+                        </div>
+                    </div>
+                    <div className="users-follow my-1">
+                        <div className="follow-users my-3">
+                            <div className="image-name">
+                                <img className="qod-image-search mx-1" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/authors/1198551937i/259666._UX200_CR0,16,200,200_.jpg" alt="" />
+                                <span>Shreyas</span>
+                            </div>
+                            <button className="follow-button">follow</button>
+                        </div>
+                    </div>
+                    <div className="users-follow my-1">
+                        <div className="follow-users my-3">
+                            <div className="image-name">
+                                <img className="qod-image-search mx-1" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/authors/1198551937i/259666._UX200_CR0,16,200,200_.jpg" alt="" />
+                                <span>Shreyas</span>
+                            </div>
+                            <button className="follow-button">follow</button>
+                        </div>
+                    </div>
+                    <div className="users-follow my-1">
+                        <div className="follow-users my-3">
+                            <div className="image-name">
+                                <img className="qod-image-search mx-1" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/authors/1198551937i/259666._UX200_CR0,16,200,200_.jpg" alt="" />
+                                <span>Shreyas</span>
+                            </div>
+                            <button className="follow-button">follow</button>
+                        </div>
+                    </div>
+
                 </div>
+
+                    </>
+                ):(
+                    <>
+                    <div className="who-to-follow m-1 my-3 p-3">
+                    <div className="users-follow my-1">
+                        <div className="follow-users my-3">
+                            <div className="image-name">
+                                <img className="qod-image-search mx-1" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/authors/1198551937i/259666._UX200_CR0,16,200,200_.jpg" alt="" />
+                                <span>Shreyas</span>
+                            </div>
+                            <button className="follow-button">follow</button>
+                        </div>
+                    </div>
+                </div>
+                    </>
+                )}
+
+            
             </>
         ):(
             <>
