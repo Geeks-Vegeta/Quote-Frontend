@@ -44,6 +44,20 @@
 
 }
 
+
+.quote-card-download {
+  min-height: 15rem;
+  border: 1px solid rgb(8, 216, 206);
+  border-radius: 15px;
+  overflow: hidden;
+  display: none;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.342);
+  background-color: transparent;
+
+}
+
+
+
 .quote-card:hover{
   cursor: pointer;
 }
@@ -53,6 +67,9 @@
   cursor: pointer;
 }
 
+#show{
+  display: none;
+}
 .qod-image{
   width: 3rem;
   height:3rem;

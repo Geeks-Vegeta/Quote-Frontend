@@ -19,12 +19,14 @@ const QuoteCard=(props)=>{
 
 
     const DownloadImage=()=>{
+       
         if(!isDarkMode)
         {
-                let x=document.getElementById(`quote-card-${props.idx}`);
+                let x=document.getElementById(`quote-cards-${props.idx}`);
+                x.style.display="block";
                 x.style.color="black";
                 x.style.backgroundColor="white";
-                toJpeg(document.getElementById(`quote-card-${props.idx}`))
+                toJpeg(x)
             .then(function (dataUrl) {
                 var link = document.createElement('a');
                 link.download = `${window.location.href}.jpg`;
@@ -32,22 +34,38 @@ const QuoteCard=(props)=>{
                 link.click();
                 x.style.color=null;
                 x.style.backgroundColor=null;
+                x.style.display=null;
+
             })
 
+
+        }else{
+
+            let x=document.getElementById(`quote-cards-${props.idx}`)
+            x.style.display="block";
+            x.style.color="white";
+            x.style.backgroundColor="black";
+            toJpeg(x)
+            .then(function (dataUrl) {
+                var link = document.createElement('a');
+                link.download = `${window.location.href}.jpg`;
+                link.href = dataUrl;
+                link.click();
+                x.style.display="none";
+                x.style.color=null;
+                x.style.backgroundColor=null;
+            })
+           
+
         }
-        document.getElementById(`quote-card-${props.idx}`);
-        toJpeg(document.getElementById(`quote-card-${props.idx}`))
-        .then(function (dataUrl) {
-            var link = document.createElement('a');
-            link.download = `${window.location.href}.jpg`;
-            link.href = dataUrl;
-            link.click();
-        })
+
+        
+
     }
 
     return (
         <>
-            <div id={`quote-card-${props.idx}`} className="quote-card  p-4">
+            <div className="quote-card  p-4">
             <div className="img-name mb-3">
                 <div className="img-name-tim">
                     <img className="qod-image" src={props.image} alt={props.author} />
@@ -131,6 +149,22 @@ const QuoteCard=(props)=>{
                
             </div>
         </div>
+
+            <div id={`quote-cards-${props.idx}`} className="quote-card-download p-4">
+                <div className="img-name mb-3">
+                    <div className="img-name-tim">
+                        <img className="qod-image" src={props.image} alt={props.author} />
+                        <span className="mx-1">{props.author}</span>
+                    </div>
+                </div>
+                <div className="quote">
+                    <p>&ldquo; {props.quote}  &rdquo;</p>
+                </div>
+                <div>
+                    <p className="author">&ndash; {props.author}</p>
+                </div>
+                
+            </div>
 
         </>
     )
