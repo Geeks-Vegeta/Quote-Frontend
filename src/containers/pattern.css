@@ -42,6 +42,10 @@
     width: 20rem;
 }
 
+#none{
+    display: none;
+}
+
 .border-text{
     border: none;
     background-color: transparent;

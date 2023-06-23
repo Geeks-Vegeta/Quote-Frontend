@@ -27,8 +27,10 @@ const QuoteoftheDay=()=>{
 
 
     const DownloadImage=()=>{
-        let x=document.getElementById(`card-for-qod`);
+       
         if(!isDarkMode){
+            document.getElementById('none').style.display='block';
+            let x=document.getElementById(`card-for-qod`);
                 x.style.color="black";
                 x.style.backgroundColor="white";
                 toJpeg(document.getElementById(`card-for-qod`))
@@ -38,16 +40,31 @@ const QuoteoftheDay=()=>{
                 link.href = dataUrl;
                 link.click();
                 x.style.color=null;
-                x.style.backgroundColor=null;
+
             })
+            document.getElementById('none').style.display='none';
+
         }
-        toJpeg(document.getElementById(`card-for-qod`))
+        else{
+            document.getElementById('none').style.display='block';
+
+            toJpeg(document.getElementById(`card-for-qod`))
             .then(function (dataUrl) {
                 var link = document.createElement('a');
                 link.download = `${window.location.href}.jpg`;
                 link.href = dataUrl;
                 link.click();
-            })}
+            })
+
+
+        document.getElementById('none').style.display='none';
+
+        }
+        
+
+
+    }
+
         
         
 
@@ -64,7 +81,7 @@ const QuoteoftheDay=()=>{
         <>
         <h4 className="m-3">Quote Of The Day &ndash;</h4>
 
-        <div id="card-for-qod" className="card-for-qod mx-auto p-3">
+        <div className="card-for-qod mx-auto p-3">
             <div className="img mb-3">
                 <img className="qod-image" src={quote?quote.image:x.image} alt={x.author} />
                 <span className="mx-2">{quote?quote.author:x.author}</span>
@@ -98,6 +115,20 @@ const QuoteoftheDay=()=>{
                 <MDBTooltip  tag='a'  title='download'>
                     <span onClick={DownloadImage}> <BiDownload className="download-icon" size="20"/> </span>
                 </MDBTooltip>
+            </div>
+        </div>
+        <div id="none">
+            <div id="card-for-qod" className="card-for-qod p-3">
+                <div className="img mb-3">
+                    <img className="qod-image" src={quote?quote.image:x.image} alt={x.author} />
+                    <span className="mx-2">{quote?quote.author:x.author}</span>
+                </div>
+                <div className="quote">
+                    <p>&ldquo; {quote?quote.quote:x.quote}  &rdquo;</p>
+                </div>
+                <div>
+                    <p className="author">&ndash; {quote?quote.author:x.author}</p>
+                </div>
             </div>
         </div>
         </>
